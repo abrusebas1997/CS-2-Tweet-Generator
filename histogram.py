@@ -1,7 +1,5 @@
 import sys
 
-
-
 def open_file():
     f_histogram = open("book.txt", "r")
     file_content = []
@@ -26,7 +24,11 @@ def histogram():
 
 def unique_words(histogram):
     """returns the total count of unique words"""
-    pass
+    unique_words = 0
+    for value in histogram.values():
+        if value == 1:
+            unique_words += 1
+    return unique_words
 
 def frequency(word, histogram):
     """returns the number of times that word appears in the  text"""
