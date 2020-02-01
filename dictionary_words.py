@@ -13,7 +13,7 @@ def random_sentence(words, length):
 
     for _ in range(length):
         random_list = random.randint(0, len(words) - 1)
-        random_sentence += " " + words[random_list]
+        random_sentence += " " + words[random_list]   
         words.remove(words[random_list])
     print(random_sentence)
 
