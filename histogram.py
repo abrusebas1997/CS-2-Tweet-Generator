@@ -1,7 +1,7 @@
 import sys
 
-def open_file():
-    f_histogram = open("book.txt", "r")
+def open_file(text):
+    f_histogram = open(text, "r")
     file_content = []
 
     for line in f_histogram:
@@ -9,16 +9,15 @@ def open_file():
         file_content.extend(line.split())
     return file_content
 
-def histogram():
+def histogram(file_content):
     """ take a filename or content_file as
      a string and return histogram data
      that stores words with the number of times the word appears"""
-     histogram = {}
-     for word in file_content:
-
-         if word in histogram:
+    histogram = {}
+    for word in file_content:
+        if word in histogram:
             histogram[word] += 1
-         else:
+        else:
             histogram[word] = 1
     return histogram
 
@@ -35,3 +34,8 @@ def frequency(word, histogram):
     for key, value in histogram.items():
         if key == word:
             return value
+
+
+if __name__ == "__main__":
+    words = open_file("book.txt")
+    print(histogram(words))
