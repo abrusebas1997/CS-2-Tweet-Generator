@@ -13,11 +13,11 @@ def words_in_total(histogram):
 
 histogram = (histogram(open_file('book.txt')))
 
-total_words = words_in_total(histogram)
-# print(total_words)
+words_in_total = words_in_total(histogram)
+# print(words_in_total)
 
-def stochastic(dict, total_words):  #ask cao why dic
-    random_number = random.randint(1, total_words)
+def stochastic(dict, words_in_total):  #ask cao why dic
+    random_number = random.randint(1, words_in_total)
     total_value = 0
     for word, value in dict.items():
         if random_number - value - total_value <= 0:
@@ -28,4 +28,4 @@ def stochastic(dict, total_words):  #ask cao why dic
 
 # when you run this for loop, it prints one random word of test.txt 1000 times
 # for i in range(1000):
-#     print(stochastic(histogram, total_words))
+#     print(stochastic(histogram, words_in_total))
